@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let amazon = [
+        {name : "speakers", price :5400, rating :4},
+        {name : "headphones", price :3000, rating :3},
+        {name : "playstation", price :20000, rating :5}
+    ]
+    let min = amazon[0].price
+    for (let i = 0; i < amazon.length; i++) {
+        if (amazon[i].price < min) {
+            min = amazon[i].price
+        }
+    }
+    console.log(min)
+</script>

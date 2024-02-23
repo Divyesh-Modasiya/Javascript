@@ -1,0 +1,32 @@
+<!-- Write a JavaScript program that generates an array of 10 random integers between 1 and 100. Using math functions, find and print the maximum and minimum values in the array.
+
+Example Output:
+```
+ (45, 12, 76, 33, 98, 21, 67, 54, 89, 10)
+Maximum: 98
+Minimum: 10 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let a = []
+    for (let i = 1; i <= 10; i++) {
+        a.push(Math.ceil(Math.random()*100))
+    }
+    let max = Math.max(a)
+    let min = Math.min(a)
+   
+    console.log(a)
+    console.log("Max is : "+max)
+    console.log("Min is : "+min)
+   
+</script>

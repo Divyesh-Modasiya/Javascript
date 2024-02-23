@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr=[]
+    let book = [
+        {title : "power of positive thinking", author:"Krish",price:999,quantity:1},
+        {title : "thinking", author:"Rahul",price:90,quantity:0},
+        {title : "wrong turn", author:"Kunj",price:30,quantity:3},
+        {title : "dark", author:"smit",price:57,quantity:4},
+
+    ]
+    for (let i = 0; i < book.length; i++) {
+        if (book[i].price<=60 && book[i].quantity>=1) {
+            arr.push(book[i])
+        }
+    }
+    console.log(arr)
+</script>

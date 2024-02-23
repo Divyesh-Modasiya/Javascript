@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   let sum =0
+    e_commerce = { 
+products : ["earphone","headphone","earpods"],
+quantity : [4,3,2],
+price : [700, 800, 1000],
+total : function(){
+    for (let i = 0; i < e_commerce.products.length; i++) {
+    sum+= e_commerce.quantity[i]*e_commerce.price[i]
+}
+console.log(sum)
+}
+}
+e_commerce.total()
+</script>

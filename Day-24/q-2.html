@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr =[]
+    let quots = [
+        {quot : "Failur is a great teacher",author : "Smit" , category:"education"},
+        {quot : "Everything is possible",author : "kunj" , category:"motivation"},
+        {quot : "time teach's everything",author : "Anand" , category:"life"},
+        {quot : "try try but dont cry",author : "Divyesh" , category:"education"}
+    ]
+    for (let i = 0; i < quots.length; i++) {
+        if (quots[i].category ==="education") {
+            arr.push(quots[i])
+        }
+    }
+    console.log(arr)
+</script>
