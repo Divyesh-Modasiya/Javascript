@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url(./photorealistic-style-clouds.jpg);
+        background-size: cover;
+    }
+    input{
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.475);
+        border: 1px solid gray;
+        border-radius: 5px;
+        font-size: 12px;
+        outline: none;
+        color: white;
+    }
+    ::placeholder{
+        font-size: 12px;
+        padding-left: 10px;
+        line-height: 20px;
+    }
+    ::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+    h1{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+    }
+    button{
+        width: 100px;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.502);
+        border: 1px solid gray;
+        font-size: 12px;
+        border-radius: 5px;
+        color: gray;
+        cursor: pointer;
+    }
+    .heading{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .second{
+        width: 40%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="heading">
+        <input type="text" id="find" placeholder="Enter City Name">
+        <button onclick="fatching()">Search</button>
+    </div>
+    <div id="main"></div>
+</body>
+</html>
+<script>
+    
+    function fatching(){
+        first = "39bd69ac85509b174cdb18348bf293fd"
+    let city = document.getElementById("find").value
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${first}`)
+    .then(function(res){
+        return res.json()
+    })
+    .then(function(json){
+        console.log(json)
+        display(json,city)
+    })
+    return(city)
+    }
+    
+
+    function display(json,city){
+        document.getElementById("main").innerHTML = ""
+        let div = document.createElement("div")
+        div.setAttribute("class","second")
+
+        let head = document.createElement("h1")
+        head.innerHTML = "Wetaher Of " + city
+
+        let country = document.createElement("h3")
+        country.innerHTML = " Country = " + json.sys.country
+
+        let min = document.createElement("h3")
+        min.innerHTML = " Min temp = " + json.main.temp_min
+
+        let max = document.createElement("h3")
+        max.innerHTML = " Max temp = " + json.main.temp_max
+
+        let wind = document.createElement("h3")
+        wind.innerHTML = " Wind speed = " + json.wind.speed
+
+        let cloud = document.createElement("h3")
+        cloud.innerHTML = " Cloud = " + json.clouds.all
+
+        let sunrise = document.createElement("h3")
+        sunrise.innerHTML = " Sun rise = " + json.sys.sunrise
+
+        let sunset = document.createElement("h3")
+        sunset.innerHTML = " Sun set = " + json.sys.sunset
+
+        let wether = document.createElement("h3")
+        wether.innerHTML = " wether = " + json.weather[0].main
+
+        div.append(head,country,min,max,wind,cloud,sunrise,sunset,wether)
+        document.getElementById("main").append(div)
+    }
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+    }
+    input{
+        width: 200px;
+        height: 25px;
+        background-color: transparent;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        border: none;
+        outline: none;
+        color: white;
+        border-bottom: 1px solid white;
+    }
+    button{
+        width: 200px;
+        height: 30px;
+        margin-top: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: white;
+    }
+</style>
+<body>
+    <center>
+        <input type="number" placeholder="Enter first number" id="in1">
+        <input type="number" placeholder="Enter second number" id="in2">
+        <br>
+        <h2 id="ans"></h2>
+        <br>
+        <button onclick="add()">Addition</button><br>
+        <button onclick="sub()">Substraction</button><br>
+        <button onclick="mul()">Multiplication</button><br>
+        <button onclick="divi()">Division</button><br>
+
+    </center>
+</body>
+</html>
+<script>
+    function add(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+        let sum = +a + +b
+        let c = document.getElementById("ans").innerHTML = "Addition is :"+sum
+    }
+    function sub(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+        let sum = +a - +b
+        let c = document.getElementById("ans").innerHTML = "Substraction is :"+sum
+    }
+    function mul(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+        let sum = +a * +b
+        let c = document.getElementById("ans").innerHTML = "Multiplication is :"+sum
+    }
+    function divi(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+        let sum = +a / +b
+        let c = document.getElementById("ans").innerHTML = "Division is :"+sum
+    }
+</script>

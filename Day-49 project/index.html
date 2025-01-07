@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+    }
+    #main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    h1{
+        text-align: center;
+    }
+    .first{
+        width: 30%;
+        height: 190px;
+        overflow: scroll;
+        margin-top: 20px;
+        border-radius: 10px;
+        padding-inline: 10px;
+        box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    p{
+        font-size: 12px;
+    }
+    img{
+        width: 80%;
+    }
+    ::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+    span{
+        color: red;
+    }
+</style>
+<body>
+    <h1>Welcome to <span>TheMeal</span></h1>
+    <div id="main"></div>
+</body>
+</html>
+<script>
+   async function fatching(){
+   let data = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+    let res = await data.json()
+    console.log(res)
+    display(res)    
+   }
+   fatching()
+   function display(res){
+    res.categories.map((el)=>{
+        let div = document.createElement("div")
+        div.setAttribute("class","first")
+
+        let id = document.createElement("h2")
+        id.innerHTML = el.idCategory
+
+        let cat = document.createElement("h2")
+        cat.innerHTML = el.strCategory
+
+        let des = document.createElement("p")
+        des.innerHTML = el.strCategoryDescription
+
+        let img = document.createElement("img")
+        img.setAttribute("src", el.strCategoryThumb)
+
+
+        div.append(id,img,cat,des)
+        document.getElementById("main").append(div)
+
+    })
+   }
+
+</script>

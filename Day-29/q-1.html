@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="text" id="in">
+        <br>
+        <span id="ans"></span><br>
+        <button onclick="cheack()">Submit</button>
+    </center>
+</body>
+</html>
+<script>
+
+    function valid(email){
+        if (email ==="") {
+            throw new Error("Enter Email first");
+        }
+        if (!email.includes("@gmail.com")) {
+            throw new Error("Invalid Email")
+        }
+    }
+    
+   function cheack(){
+    try {
+    let email = document.getElementById("in").value
+    let a = document.getElementById("ans").innerHTML = "Valid"
+    valid(email)
+    } catch (e) {
+        document.getElementById("ans").innerHTML = e.message;
+    }
+    }
+</script>

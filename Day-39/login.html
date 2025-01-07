@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form id="login">
+            <label for="">Enter Email</label>
+            <input type="email" name="" id="loginemail">
+            <br><br><br>
+            <label for="">Enter Password</label>
+            <input type="password" name="" id="loginpass">
+            <br><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+</body>
+</html>
+<script>
+    let login = document.getElementById("login")
+    login.addEventListener("submit",function(event){
+    event.preventDefault()
+    let loginemail = document.getElementById("loginemail").value
+    let loginpass = document.getElementById("loginpass").value
+
+    let store = JSON.parse(localStorage.getItem("info")) || []
+    let user = store.find(info => info.email === loginemail && info.pass === loginpass)
+    if(user){
+        alert("Log In")
+        window.location.replace = ('/home/divyesh/full stack/Java Script/Day-39/signup.html')
+    }
+    else{
+        alert("Enter valid Input")
+    }
+    })
+</script>

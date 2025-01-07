@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Dont make any changes here -->
+    <h1 style="margin-left: 100px;">RED & WHITE Evaluation Report</h1>
+
+    <div class="main">
+      <!-- ***** We are using form here  ****  -->
+      <form>
+        <h1 class="h1">Enter Details</h1>
+        <br />
+        <input id="name" type="text" placeholder="Enter Student Name" /><br />
+        <br />
+        <select id="batch">
+          <option value="FT WEB-17">JS WEB-3</option>
+          <option value="FT WEB-16">HC WEB-16</option>
+          <option value="FT WEB-15">C WEB-15</option>
+          <option value="FT WEB-14">JS WEB-14</option></select
+        ><br />
+        <br />
+        <input
+          id="dsa"
+          type="number"
+          placeholder="Enter DSA score out of 10"
+        /><br />
+        <br />
+        <input
+          id="cs"
+          type="number"
+          placeholder="Enter Skillathon score out of 10"
+        /><br />
+        <br />
+        <input
+          id="coding"
+          type="number"
+          placeholder="Enter Coding score out of 10"
+        /><br />
+        <button id="btn" onclick="info()">Submit</button>
+      </form>
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>DSA</th>
+            <th>Skillathon</th>
+            <th>Coding</th>
+            <th>Percentage %</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script src="index.js"></script>

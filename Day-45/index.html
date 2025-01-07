@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    img{
+        width: 50%;
+    }
+  </style>
+  <body>
+    <div id="main"></div>
+  </body>
+</html>
+<script>
+   fetch("https://fakestoreapi.com/products")
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      display(json);
+    });
+  function display(data) {
+    data.map((el)=>{
+    let div = document.createElement("div");
+
+    let image = document.createElement("img");
+    image.setAttribute("src", el.image);
+
+    let title = document.createElement("h1");
+    title.innerHTML = el.title;
+
+    div.append(image, title);
+    document.getElementById("main").append(div);
+    })
+  }
+</script>

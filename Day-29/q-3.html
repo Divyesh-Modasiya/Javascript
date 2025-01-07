@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center>
+    <input type="number" id="in">
+    <br>
+    <button onclick="cheak()">Submit</button><br>
+    <span id="ans"></span>
+   </center>
+</body>
+</html>
+<script>
+
+    function b(a){
+        if (a=="") {
+            throw new Error("Enter value first")
+        }
+        if (a < 18) {
+            throw new Error("Not eligible to vote")
+        }
+    }
+    
+
+   function cheak(){
+   
+    try {
+        let a = document.getElementById("in").value
+        let c = document.getElementById("ans").innerHTML = "Eligible for vote"
+        b(a)
+    } catch (e) {
+        document.getElementById("ans").innerHTML = e.message
+    }
+
+    }
+</script>

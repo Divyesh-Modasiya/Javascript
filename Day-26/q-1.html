@@ -1,0 +1,77 @@
+<!-- 1. Complete the functionality in the file selectors.html
+On clicking the button Change H1 the colour of first <h1> should turn to red
+On clicking the button Change H3 the colour of all <h3> should turn to green
+On clicking the button Change H5 the colour of all <h5> should turn to blue
+On clicking Change Green all the elements with the class green should change to green
+On clicking Change Blue all the elements with the class blue should change to blue
+On clicking Change Red all the elements with the class red should change to red -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>This is a first h1 heading tag</h1>
+    <h1>This is a second h1 heading tag</h1>
+    <h1>This is a third h1 heading tag</h1>
+    <br>
+    <button onclick="chg()">Change color</button>
+    <br><hr>
+    <h3>this is first h3 heading tag</h3>
+    <h3>this is second h3 heading tag</h3>
+    <h3>this is third h3 heading tag</h3>
+    <h3>this is forth h3 heading tag</h3>
+    <br>
+    <button onclick="chg3()">Change color</button>
+    <br><hr>
+    <h5>this is first h5 heading tag</h5>
+    <h5>this is second h5 heading tag</h5>
+    <h5>this is third h5 heading tag</h5>
+    <h5>this is forth h5 heading tag</h5>
+    <h5>this is fifth h5 heading tag</h5>
+    <h5>this is sixth h5 heading tag</h5>
+    <br>
+    <button onclick="chg5()">Change color</button>
+    <br><hr>
+    <h6 class="blue">this is first h6 tag</h6>
+    <h6 class="blue">this is second h6 tag</h6>
+    <h6 class="blue">this is third h6 tag</h6>
+    <br>
+    <button onclick="chg6()">Change red</button>
+    <br><hr>
+
+    
+
+</center>
+
+</body>
+</html>
+<script>
+      function chg(){
+        let a = document.querySelector("h1")
+        a.style.color = "red"
+    }
+    function chg3(){
+        let b = document.querySelectorAll("h3")
+        for (let i = 0; i < b.length; i++) {
+            b[i].style.color = "green"  
+            b[i].style.fontSize = "30px"  
+        }
+    }
+
+    function chg5(){
+        let c = document.querySelectorAll("h5")
+        for (let i = 0; i < c.length; i++) {
+           c[i].style.color = "blue"
+        }
+    }
+    function chg6(){
+        let d = document.querySelectorAll(".blue")
+        for (let i = 0; i < d.length; i++) {
+           d[i].style.color = "red"
+        }
+    }
+</script>

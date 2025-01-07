@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    img {
+      width: 55%;
+    }
+  </style>
+  <body>
+    <center>
+      <form action="" id="main">
+        <input type="text" id="data" />
+        <input type="submit" name="" id="" />
+      </form>
+      <img
+        src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
+        alt=""
+        id="img"
+      />
+      <h1 id="text"></h1>
+    </center>
+  </body>
+</html>
+<script>
+  document.getElementById("img").style.display = "none";
+  document.getElementById("main").addEventListener("submit", function () {
+    event.preventDefault()
+    let price = document.getElementById("data").value;
+    let promice = new Promise(function (res, rej) {
+      setTimeout(() => {
+        if (price >= 1 && price <= 500) {
+          res("Sucsess");
+        } else {
+          rej("Error");
+        }
+      },1000);
+    });
+  document.getElementById("img").style.display = "block";
+  document.getElementById("text").innerHTML = ""
+  promice
+  .then(function(res){
+  document.getElementById("img").style.display = "none";
+    document.getElementById("text").innerHTML = res
+  })
+  .catch(function(rej){
+  document.getElementById("img").style.display = "none";
+    document.getElementById("text").innerHTML = rej
+  })
+
+  });
+</script>

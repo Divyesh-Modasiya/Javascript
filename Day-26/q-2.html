@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Content Manipulation</title>
+  </head>
+  <style>
+    input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid white;
+      height: 25px;
+      width: 200px;
+      color: white;
+      margin-left: 10px;
+    }
+    button {
+      width: 300px;
+      height: 40px;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+  </style>
+  <body style="background-color: black; color: white; font-size: 25px">
+    <center>
+      <h1>Enter your details</h1>
+
+      <div id="lastname">
+        Your First Name :
+        <input type="text" id="in1" />
+      </div>
+      <br />
+      <div id="lastname">
+        Your Last Name :
+        <input type="text" id="in2" />
+      </div>
+      <br />
+      <div id="city">
+        Enter Your City :
+        <input type="text" id="in3" />
+      </div>
+      <br />
+      <div id="work">
+        Your Profession :
+        <input type="text" id="in4" />
+      </div>
+      <button id="btn" onclick="out1()">Submit</button>
+      <hr><hr>
+    </center>
+
+    <center>
+        <div class="main">
+            <h2 id="ans4" style="color: white"></h2>
+            <h4 id="ans" style="color: white"></h4>
+            <h4 id="ans1" style="color: white"></h4>
+            <h4 id="ans2" style="color: white"></h4>
+            <h4 id="ans3" style="color: white"></h4>
+        </div>
+       
+    </center>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function out1() {
+    let a = document.getElementById("in1").value;
+    let b = document.getElementById("in2").value;
+    let c = document.getElementById("in3").value;
+    let d = document.getElementById("in4").value;
+    let fifth = (document.getElementById("ans4").innerHTML =
+    "Your Details")
+    let first = (document.getElementById("ans").innerHTML =
+      "Your First Name : " + a);
+    let second = (document.getElementById("ans1").innerHTML =
+      "Your Last Name : " + b);
+    let third = (document.getElementById("ans2").innerHTML =
+      "Your Current City : " + c);
+    let forth = (document.getElementById("ans3").innerHTML =
+      "Your Profession : " + d);
+      alert("are you sure ?")
+  }
+</script>
